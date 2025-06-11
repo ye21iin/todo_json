@@ -10,7 +10,7 @@ const middlewares = jsonServer.defaults({
 // CORS 설정
 server.use(
   cors({
-    origin: "http://localhost:3000", // 명시적인 URL 지정
+    origin: ["http://localhost:3000", "https://todo-xi-seven-20.vercel.app"],
     credentials: true, // credentials 허용
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
