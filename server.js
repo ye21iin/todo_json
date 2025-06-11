@@ -7,15 +7,8 @@ const middlewares = jsonServer.defaults({
   static: "public",
 });
 
-// CORS 설정
-server.use(
-  cors({
-    origin: ["http://localhost:3000", "http://localhost:3001"],
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
-);
+// 모든 origin 허용
+server.use(cors());
 
 server.use(middlewares);
 server.use(router);
