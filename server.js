@@ -1,7 +1,10 @@
 const jsonServer = require("json-server");
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
-const middlewares = jsonServer.defaults();
+const middlewares = jsonServer.defaults({
+  static: "public",
+  cors: true, // cors 활성화
+});
 
 server.use(middlewares);
 server.use(router);
